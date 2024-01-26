@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cep.css') }}">
+    <title>Consuta CEP</title>
+</head>
+<body>
+	<form method="POST" action="/consulta">
+		<h2>Consulta CEP</h2>
+		<input name="cep" type="text" placeholder="Cep">
+		<input type="submit" value="Consultar">
+		<h3>{{aviso}}</h3>
+	</form>
+</body>
+</html>
