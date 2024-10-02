@@ -1,1 +1,1 @@
-Sisteminha utiliza Flask, bootstrap, HTML, CSS.
+Sisteminha Usa Flask, bootstrap, HTML, CSS.
