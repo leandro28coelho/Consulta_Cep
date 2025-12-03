@@ -6,4 +6,4 @@ dependencies = ["flask>=3.0.0"]
 [tool.vercel]
 # Caminho para o módulo e variável Flask
 # Formato: "pacote.modulo:variavel"
-app = "src.App_cep.py:app"
+app = "src.App_cep:app"
