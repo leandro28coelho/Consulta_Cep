@@ -1,34 +1,72 @@
+
+:root {
+    /* Ajuste o nível de zoom aqui: 1 = 100%, 1.1 = 110%, 1.25 = 125% */
+    --zoom: 1.20;
+}
+
+* { box-sizing: border-box; }
+
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f6f7f9;
 }
+
+.wrapper {
+    /* Contêiner para “compensar” o scale e manter centrado visualmente */
+    transform: translateZ(0); /* habilita aceleração */
+    will-change: transform;
+}
+
 form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #ccc;
+    background: #fff;
+
+    /* O “zoom” */
+    transform: scale(var(--zoom));
+    transform-origin: center center;
+
+    /* Para que o zoom não "estoure" a viewport ao centralizar */
+    max-width: min(90vw, 520px);
 }
-input[type="text"]{
-	padding: 10px;
-	margin: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	width: 100%;
-	box-sizing: border-box;
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 1rem;
 }
-input[type="submit"]{
-	padding: 10px;
-	margin: 10px;
-	border-radius: 5px;
-	border: none;
-	background-color: #007bff;
-	color: #fff;
-	cursor: pointer;
-	width: 100%;
-	box-sizing: border-box;
+
+input[type="submit"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivo: diminui o zoom em telas muito pequenas */
+@media (max-width: 380px) {
+    :root { --zoom: 1.05; }
 }
